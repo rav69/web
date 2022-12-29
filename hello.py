@@ -1,5 +1,6 @@
 def app(environ, start_response):
     """Simplest possible application object"""
+    print(environ)
     data = b'Hello, World!\n'
     status = '200 OK'
     response_headers = [
