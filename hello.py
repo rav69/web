@@ -8,4 +8,4 @@ def app(environ, start_response):
     ]
     start_response(status, response_headers)
     # return iter([data.encode('utf-8')])
-    return iter([data])
+    return [bytes('\r\n'.join(environ['QUERY_STRING'].split('&')), encoding="utf8")]
